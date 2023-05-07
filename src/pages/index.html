@@ -1,4 +1,4 @@
-<?php extend('../templates/main.html', ['title' => 'Home Page']) ?>
+<?php extend('../templates/main.html', ['title' => 'Very Useful Apps']) ?>
 
 <?php
 // Page content here
@@ -6,10 +6,85 @@
 // includePart('../parts/some-part.html', ['param' => 'value'])
 ?>
 
-<h1 class="mt-8 text-6xl text-center">Hello, World!</h1>
+<h1 class="mt-8 mb-16 text-6xl text-center">Very Useful Apps!</h1>
 
-<?php if (ENVIRONMENT === 'DEVELOPMENT') : ?>
-    <h2 class="mt-4 text-2xl text-center">Sssh, we're only testing!</h2>
-<?php endif; ?>
+<div class="mx-auto flex flex-wrap w-full max-w-screen-xl justify-center">
+    <?php includePart(
+        '../parts/card.html',
+        [
+            'category' => 'Social Media Tools',
+            'title' => 'Tweet Finder',
+            'description' => 'A quick and simple interface to Twitter&quot;s advanced search.',
+            'url' => 'https://tweet-finder.veryuseful.app/',
+            'image' => '/images/tweet-finder.jpg',
+            'tags' => [ 'html' ],
+        ]) ?>
+
+        <?php includePart(
+            '../parts/card.html',
+            [
+                'category' => 'Developer Tools',
+                'title' => 'WP Composer Generator',
+                'description' => 'A tool to create and edit composer.json files for WordPress websites',
+                'url' => 'https://wp-composer-generator.veryuseful.app/',
+                'image' => '/images/wp-composer-generator.jpg',
+                'tags' => [ 'javascript', 'alpinejs' ],
+            ]) ?>
+
+    <?php includePart(
+        '../parts/card.html',
+        [
+            'category' => 'Social Media',
+            'title' => 'Feed Me',
+            'description' => 'A simple prototype of a social media cross-posting tool and RSS feed-reader',
+            'url' => 'https://feed-me.veryuseful.app/',
+            'image' => '/images/feed-me.jpg',
+            'tags' => [ 'javascript', 'alpinejs' ],
+        ]) ?>
+
+    <?php includePart(
+        '../parts/card.html',
+        [
+            'category' => 'Home / Family',
+            'title' => 'Get Out',
+            'description' => 'A tool to help your family leave the house on time. Multiple to-do lists and a big countdown timer.',
+            'url' => 'https://get-out.veryuseful.app/',
+            'image' => '/images/get-out.jpg',
+            'tags' => [ 'php', 'laravel', 'livewire' ],
+        ]) ?>
+
+        <?php includePart(
+            '../parts/card.html',
+            [
+            'category' => 'Developer Tools',
+            'title' => 'JSON Database Editor',
+            'description' => 'A tool for editing what I call &ldquo;JSON databases&rdquo;',
+            'url' => 'https://json-db-editor.veryuseful.app/',
+            'image' => '/images/json-db-editor.jpg',
+            'tags' => [ 'javascript', 'alpinejs' ],
+            ]) ?>
+
+        <?php includePart(
+            '../parts/card.html',
+            [
+            'category' => 'Social Media Tools',
+            'title' => 'Mastodon Link',
+            'description' => 'A tool that could be used to post Mastodon links to Twitter during the days that Twitter blocked such links',
+            'url' => 'https://mastodon-link.veryuseful.app',
+            'image' => '/images/mastodon-link.jpg',
+            'tags' => [ 'html' ],
+            ]) ?>
+
+        <?php /* includePart(
+            '../parts/card.html',
+            [
+                'category' => 'Productivity',
+                'title' => 'Journal',
+                'description' => '',
+                'url' => 'https://journal.veryuseful.app',
+                'tags' => [ 'php', 'laravel', 'livewire' ],
+            ]) */ ?>
+
+    </div>
 
 <?php endExtend(); ?>

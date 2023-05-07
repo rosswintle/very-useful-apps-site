@@ -1,0 +1,39 @@
+
+<a href="<?= $url ?>" class="block w-80 mx-4 mb-6 overflow-hidden rounded-lg bg-white shadow">
+    <img src="<?= $image ?>" alt="Image of <?= $title ?>" />
+    <div class="p-4">
+      <p class="mb-1 text-sm italic text-primary-500"><?= $category ?></p>
+      <h3 class="text-xl font-medium text-gray-900"><?= $title ?></h3>
+      <p class="mt-1 text-gray-500"><?= $description ?></p>
+      <div class="mt-4 flex gap-2">
+        <?php foreach($tags as $tag) : ?>
+            <span class="
+                inline-flex
+                items-center
+                gap-1
+                rounded-full
+                <?= match($tag) {
+                    'alpinejs' => 'bg-teal-400 text-slate-700',
+                    'php' => 'bg-violet-300 text-slate-800',
+                    'laravel' => 'bg-rose-50 text-rose-600',
+                    'livewire' => 'bg-pink-100 text-indigo-400',
+                    'javascript' => 'bg-yellow-300 text-slate-600',
+                    'html' => 'bg-orange-500 text-white',
+                } ?>
+                px-2
+                py-1
+                text-xs
+                font-semibold">
+                <?= match($tag) {
+                    'alpinejs' => 'AlpineJS',
+                    'php' => 'PHP',
+                    'laravel' => 'Laravel',
+                    'livewire' => 'Livewire',
+                    'javascript' => 'JavaScript',
+                    'html' => 'HTML',
+                } ?>
+            </span>
+        <?php endforeach; ?>
+      </div>
+    </div>
+</a>
